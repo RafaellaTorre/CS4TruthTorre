@@ -17,7 +17,7 @@ public class Ex02TruthTorre {
     int guesses = 5;
     int guessNum = 0;
     //displays options to user
-    System.out.println("Welcome to Higher or Lower! What will you do?\n" + "-Start game\n" + "-Change settings\n" + "-End application");
+    System.out.println("Welcome to Higher or Lower! What will you do?\n" + "-Start game\n" + "-Change settings\n" + "-End application\n");
     String userChoice = sc.nextLine();
     
     switch(userChoice){
