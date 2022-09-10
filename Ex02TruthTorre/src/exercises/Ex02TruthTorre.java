@@ -16,28 +16,41 @@ public class Ex02TruthTorre {
     int random = (int) Math.floor(Math.random()*range)+1;
     int guesses = 5;
     int guessNum = 0;
-    //if user chooses to start game
-    System.out.println("You have " + guesses + " guess(es) left. What is your guess?");
-    guessNum = sc.nextInt();
-    while(guessNum != random){
-       for ( int i = 1; i < guesses; i++){
-        int guessesLeft = guesses - i;
-        
-        if(guessNum < random){
-            System.out.println("Guess higher! You have " + guessesLeft + " guess(es) left. What is your guess?");
-            guessNum = sc.nextInt();
-        }
+    //displays options to user
+    System.out.println("Welcome to Higher or Lower! What will you do?\n" + "-Start game\n" + "-Change settings\n" + "-End application");
+    String userChoice = sc.nextLine();
     
-        else if (guessNum > random){
-            System.out.println("Guess lower! You have " + guessesLeft + " guess(es) left. What is your guess?");
+    switch(userChoice){
+        case "Start Game": //if user chooses to start game
+            System.out.println("You have " + guesses + " guess(es) left. What is your guess?");
             guessNum = sc.nextInt();
-        }
+            while(guessNum != random){
+            for ( int i = 1; i < guesses; i++){
+            int guessesLeft = guesses - i;
         
-        else{
-        System.out.println("You got it!");
+            if(guessNum < random){
+                System.out.println("Guess higher! You have " + guessesLeft + " guess(es) left. What is your guess?");
+                guessNum = sc.nextInt();
+            }
+    
+            else if (guessNum > random){
+                System.out.println("Guess lower! You have " + guessesLeft + " guess(es) left. What is your guess?");
+                guessNum = sc.nextInt();
+            }
+        
+            else{
+            System.out.println("You got it!");
+            }
         }
     }
-  }
+        break;
+        
+        case "Change Settings": // if user chooses to change settings
+        break;
+    
+        case "End Application": // if user chooses to end application
+        break;
+}
 }
 }
   
