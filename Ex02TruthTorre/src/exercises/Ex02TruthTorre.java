@@ -15,21 +15,29 @@ public class Ex02TruthTorre {
     int range = 10;
     int random = (int) Math.floor(Math.random()*range)+1;
     int guesses = 5;
+    int guessNum = 0;
     //if user chooses to start game
-    for ( int i = 0; i < guesses; i++)
+    System.out.println("You have " + guesses + " guess(es) left. What is your guess?");
+    guessNum = sc.nextInt();
     while(guessNum != random){
-        System.out.println("You have " + guesses + " guess(es) left. What is your guess?");
-        int guessNum = sc.nextInt();
+       for ( int i = 1; i < guesses; i++){
+        int guessesLeft = guesses - i;
+        
         if(guessNum < random){
-            System.out.println("Guess higher! You have " + guesses + " guess(es) left. What is your guess?");
+            System.out.println("Guess higher! You have " + guessesLeft + " guess(es) left. What is your guess?");
             guessNum = sc.nextInt();
         }
     
-        else{
-            System.out.println("Guess lower! You have " + guesses + " guess(es) left. What is your guess?");
+        else if (guessNum > random){
+            System.out.println("Guess lower! You have " + guessesLeft + " guess(es) left. What is your guess?");
             guessNum = sc.nextInt();
         }
+        
+        else{
         System.out.println("You got it!");
+        }
     }
-    }
+  }
 }
+}
+  
