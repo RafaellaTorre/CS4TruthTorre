@@ -21,10 +21,10 @@ public class Ex02TruthTorre {
     String userChoice = sc.nextLine();
     
     switch(userChoice){
-        case "Start Game": //if user chooses to start game
+        case "Start game": //if user chooses to start game
             System.out.println("You have " + guesses + " guess(es) left. What is your guess?");
             guessNum = sc.nextInt();
-            for ( int i = 1; i < guesses; i++){
+            for (int i = 1; i < guesses; i++){
             int guessesLeft = guesses - i;
         
             if(guessNum < random){
@@ -37,16 +37,17 @@ public class Ex02TruthTorre {
                 guessNum = sc.nextInt();
             }
         
-            else{
+            else if (guessNum == random){
             System.out.println("You got it!");
             }
         }
+            System.out.println("You lost...");
         break;
         
-        case "Change Settings": // if user chooses to change settings
+        case "Change settings": // if user chooses to change settings
         break;
     
-        case "End Application": // if user chooses to end application
+        case "End application": // if user chooses to end application
         break;
 }
 }
